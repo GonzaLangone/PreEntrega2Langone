@@ -1,0 +1,295 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* creacion de variables */
+:root{
+    --fuente: serif;
+    --colorFuente: rgba(255, 159, 25, 0.843);
+    --colorFuenteBlanco :rgb(255, 255, 255) ;
+
+}
+/* para manejar todo con grid creamos el contenedor */
+.grid-container{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 5% 30% 40% 30% 5% 10% ;
+    grid-template-areas: 
+    'cabecera cabecera' 
+    'foto foto' 
+    'mapa mapa' 
+    'horario plato'
+    'reserva reserva' 
+    'fin fin' 
+    ;
+    row-gap: 4%;
+
+}
+/* inicio de header */
+header{
+    grid-area: cabecera;
+    display: grid;
+    grid-template-columns: 10% 40%;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+header li {
+    display: inline;
+    padding-right: 10%;
+    color: #000;
+}
+/* activo es para que se marque al estar en la pagina */
+.activo{
+    color: var(--colorFuente);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.244);
+}
+header a{
+    text-decoration: none;
+}
+header li:hover{
+    transition: 1s ease;
+    color: var(--colorFuente);
+}
+header img{
+    width: 100%;
+    height: 100%;
+}
+/* fin header */
+
+/* inicio foto con texto *nuestro restaurante* */
+.foto-restaurante{
+    grid-area: foto;
+    text-align: center;
+}
+.texto-principal{
+    color: var(--colorFuente);
+    font-size: 120px;
+    font-family: var(--fuente);
+    position: absolute;
+}
+.foto-restaurante img{
+    width: 100%;
+    height: 100%;
+}
+span{
+    color: var(--colorFuenteBlanco);
+}
+/* fin */
+/* incio mapa de nuestra ubicacion */
+.mapa{
+    grid-area: mapa;
+    text-align: center;
+    
+}
+.mapa iframe{
+    border-radius: 10px;
+    width: 95%;
+    height: 100%;
+    box-shadow: 3px 3px 40px 3px  rgb(0, 0, 0);
+}
+/* fin */
+
+/* cuadros con horarios y plato del dia */
+.horarios{
+    grid-area: horario;
+    text-align: center;
+    align-content: center;
+    background-image: url(https://radabeach.com.ar/img/galeria2/f.jpg);
+    width: 90%;
+    border-radius: 2%;
+    height: 100%;
+    margin-left: 5%;
+    background-size:cover;
+}
+
+.horarios .hora {
+ color:rgb(200, 236, 236);
+ font-family: var(--fuente);
+ font-size: 50px;
+}
+.hora h1{
+    color:var(--colorFuenteBlanco) ;   
+}
+.plato-destacado{
+    margin-left: 5%;
+    grid-area: plato;
+    text-align: center;
+    background-image: url(https://www.comedera.com/wp-content/uploads/2022/05/Arroz-con-mejillones-shutterstock_2121928889.jpg);
+    border-radius: 2%;
+    width: 90%;
+    height: 100%;
+    background-size:cover;
+}
+.plato-destacado .texto{
+    color: rgba(255, 159, 25, 0.843);
+    font-size: 40px;
+    font-family: var(--fuente);
+}
+.texto h2{
+    color:var(--colorFuenteBlanco) ;
+}
+/* fin */
+
+/* boton de reservar mesa */
+.reserva{
+    grid-area: reserva;
+    text-align: center;
+}
+.reserva a {
+   text-decoration: none;
+   color:var(--colorFuenteBlanco) ;
+   background-color: rgba(90, 150, 252, 0.52);
+   border-radius: 10px;
+   padding: 0px 10% 0px 10%;
+   border: 1px solid rgba(90, 150, 252, 0.52);
+   box-shadow: 0px 1px 6px 0px  rgb(0, 88, 240);
+   font-size: 60px;
+}
+.reserva a:hover{
+    transition: 2s ease;
+    padding: 0px 11% 0px 11%;
+    background-color: rgba(0, 88, 240, 0.594);
+    border: 1px solid rgba(90, 150, 252, 0.52);
+    box-shadow: 10px 10px 200px 10px  rgba(90, 150, 252, 0.52);
+}
+/* fin boton de reservar mesa */
+footer{
+    grid-area: fin;
+    background-color: black;
+    align-content: center;
+    color: var(--colorFuenteBlanco);
+    text-align: center;
+}
+/* fin footer */
+
+/* grid contenedor de el segundo html pagina primer plato */
+.grid-container-primer{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 10% 5% 85% 10% ;
+    grid-template-areas: 
+    'cabecera cabecera' 
+    'titulo titulo'
+    'card1 card2' 
+    'fin fin' 
+    ;
+    row-gap: 4%;
+}
+/* titulo  */
+.titulo-seccion{
+    grid-area: titulo;
+    color: var(--colorFuente);
+    font-family: var(--fuente);
+    padding-left: 3%;
+    align-content: end;
+}
+/* inicio cards */
+/* cards es el contenedor de las card, lo hice para poder separalas mas facil */
+.cards{
+    grid-area: card1;
+}
+.cards-der{
+    grid-area: card2;
+}
+.card{
+    display: grid;
+    grid-template-columns: 40% 25% 35%;
+    grid-template-rows: 70%;
+    align-content: center;
+    align-items: center;
+    background-color: aliceblue;
+    margin: 5px;
+}
+.descripcion{
+    padding-left: 5%;
+}
+.descripcion h1{
+    color: var(--colorFuente);
+}
+.imagen-producto img{ 
+    width: 100%;
+    height: 100%;
+}
+.imagen-producto{
+    padding-right: 5%;
+}
+/* fin cards */
+
+/* inicio de media  */
+@media (max-width: 500px) {
+    .grid-container{
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 5% 30% 40% 30% 30% 5% 10% ;
+        grid-template-areas: 
+        'cabecera ' 
+        'foto ' 
+        'mapa ' 
+        'horario '
+        'plato'
+        'reserva ' 
+        'fin ' 
+        ;
+        row-gap: 7%;
+    
+    }
+    /* header */
+    header{
+        grid-area: cabecera;
+        display: grid;
+        grid-template-columns: 25% 70%;
+        justify-content: space-around;
+        align-items: center;
+        
+    }
+    header li {
+        padding-right: 3%;
+       
+    }
+    /* fin de header */
+    
+    .texto-principal{
+        padding-top: 25%;
+        font-size: 200%;
+    }
+
+    .horarios .hora {
+        font-size: 40px;
+    }
+
+    .plato-destacado .texto{
+        font-size: 30px;
+    }
+    .plato-destacado h2{
+        font-size: 35px;
+    }
+
+    .reserva{
+        grid-area: reserva;
+        text-align: center;
+    }
+    .reserva a { 
+       font-size: 30px;
+    }
+
+
+    /* parte de media de primeros platos */
+    .grid-container-primer{
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 10% 5% 45% 45% 10% ;
+        grid-template-areas: 
+        'cabecera ' 
+        'titulo '
+        'card1'
+        'card2' 
+        'fin ' 
+        ;
+        row-gap: 0%;
+    }
+    .precio{
+        margin-left: 15%;
+    }
+}
