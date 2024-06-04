@@ -13,15 +13,12 @@
 /* para manejar todo con grid creamos el contenedor */
 .grid-container{
     display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 5% 30% 40% 30% 5% 10% ;
+    grid-template-columns: 100%;
+    grid-template-rows: 15% 250% 20% ;
     grid-template-areas: 
-    'cabecera cabecera' 
-    'foto foto' 
-    'mapa mapa' 
-    'horario plato'
-    'reserva reserva' 
-    'fin fin' 
+    'cabecera' 
+    'inicio'
+    'fin' 
     ;
     row-gap: 4%;
 
@@ -57,6 +54,21 @@ header img{
     height: 100%;
 }
 /* fin header */
+main{
+    grid-area: inicio;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 30% 30% 20% 10%;
+    grid-template-areas: 
+    'foto foto' 
+    'mapa mapa' 
+    'horario plato'
+    'reserva reserva'
+    ;
+    row-gap: 4%;
+
+}
+
 
 /* inicio foto con texto *nuestro restaurante* */
 .foto-restaurante{
@@ -102,6 +114,7 @@ span{
     height: 100%;
     margin-left: 5%;
     background-size:cover;
+    
 }
 
 .horarios .hora {
@@ -113,6 +126,7 @@ span{
     color:var(--colorFuenteBlanco) ;   
 }
 .plato-destacado{
+    
     margin-left: 5%;
     grid-area: plato;
     text-align: center;
@@ -156,6 +170,7 @@ span{
 }
 /* fin boton de reservar mesa */
 footer{
+    
     grid-area: fin;
     background-color: black;
     align-content: center;
@@ -222,18 +237,25 @@ footer{
     .grid-container{
         display: grid;
         grid-template-columns: 100%;
-        grid-template-rows: 5% 30% 40% 30% 30% 5% 10% ;
+        grid-template-rows: 10% 200% 10%;
         grid-template-areas: 
-        'cabecera ' 
-        'foto ' 
-        'mapa ' 
-        'horario '
-        'plato'
-        'reserva ' 
-        'fin ' 
-        ;
-        row-gap: 7%;
+        'cabecera' 
+         'inicio'
+         'fin' 
+         ;
+        row-gap: 4%;
     
+    }
+    main{
+        grid-template-columns: 100%;
+        grid-template-rows: 20% 15% 25% 20% 5%;
+        grid-template-areas: 
+        'foto' 
+        'mapa ' 
+        'horario'
+        'plato'
+        'reserva'
+        ;
     }
     /* header */
     header{
